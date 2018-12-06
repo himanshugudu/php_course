@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['Name'] = 'prashant s';
+$_SESSION['Name'] = 'uttam';
 echo "create";
 
 ?>

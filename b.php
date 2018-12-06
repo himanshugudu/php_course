@@ -27,7 +27,11 @@
 		}
 		
 	$query="select * from brock";
+	
 	$result=mysqli_query($connection,$query);
+	
+	$row=mysqli_fetch_array($result);
+	print_r($row);
 	while($row=mysqli_fetch_array($result))
 		{
 ?>

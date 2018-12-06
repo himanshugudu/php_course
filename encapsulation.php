@@ -150,40 +150,40 @@
 	?>
 	<!-- we can not able to create object class directly in abstract -->
 	<?php
-	// 	class BaseEmployee{
-	// 	protected $firstname;
-	// 	protected $lastname;
-	// 	public function getFullName()
-	// 	{
-	// 		return $this->firstname." ".$this->lastname;
-	// 	}
-	// 	public abstract function getMonthlySalary();
-	// 	public function __construct($f, $l)
-	// 	{
-	// 		$this->firstname = $f;
-	// 		$this->lastname = $l;
-	// 	}
-	// }
-	// class FulltimeEmployee extends BaseEmployee{
-	// 	protected $annualsalary;
-	// 	public function getMonthlySalary()
-	// 	{
-	// 		return $this->annualsalary/12;
-	// 	}
-	// }
-	// class ContractEmployee extends BaseEmployee{
-	// 	protected $hourlyRate;
-	// 	protected $totalHours;
-	// 	public function getMonthlySalary()
-	// 	{
-	// 		return $this->hourlyRate * $this->totalHours;
-	// 	}
-	// }
-	// $fulltime = new FulltimeEmployee('fulltime', 'Employee');
-	// $contract = new ContractEmployee('Contract', 'Employee');
-	// $test = new BaseEmployee('test','test1');
-	// echo $test->getFullName();
-	// echo $fulltime->getFullName();
+	class BaseEmployee{
+		protected $firstname;
+		protected $lastname;
+		public function getFullName()
+		{
+			return $this->firstname." ".$this->lastname;
+		}
+		public abstract function getMonthlySalary();
+		public function __construct($f, $l)
+		{
+			$this->firstname = $f;
+			$this->lastname = $l;
+		}
+	}
+	class FulltimeEmployee extends BaseEmployee{
+		protected $annualsalary;
+		public function getMonthlySalary()
+		{
+			return $this->annualsalary/12;
+		}
+	}
+	class ContractEmployee extends BaseEmployee{
+		protected $hourlyRate;
+		protected $totalHours;
+		public function getMonthlySalary()
+		{
+			return $this->hourlyRate * $this->totalHours;
+		}
+	}
+	$fulltime = new FulltimeEmployee('fulltime', 'Employee');
+	$contract = new ContractEmployee('Contract', 'Employee');
+
+	echo $fulltime->getFullName();
+	echo $contract->getFullName();
 	?>
 	<!-- interface is same like abstract is support multiple class -->
 	<!-- in interface i can not declear variable -->
@@ -232,26 +232,26 @@
 	// echo $t->demo2();
 	?>
 	<?php
-	abstract class abc{
-		public $data;
-	}
-	interface test{
-		public function demo();
+	// abstract class abc{
+	// 	public $data;
+	// }
+	// interface test{
+	// 	public function demo();
 		
-	}
-	interface test2{
+	// }
+	// interface test2{
 		
-		public function demo2();
-	}
-	class test1 implements test,test2{
-		public function demo(){
-			echo "demo";
-		}
-		public function demo2()
-		{
-			echo "demo2";
-		}
-	}
-	$t = new test1;
-	echo $t->demo2();
-	?>
+	// 	public function demo2();
+	// }
+	// class test1 implements test,test2{
+	// 	public function demo(){
+	// 		echo "demo";
+	// 	}
+	// 	public function demo2()
+	// 	{
+	// 		echo "demo2";
+	// 	}
+	// }
+	// $t = new test1;
+	// echo $t->demo2();
+	// ?>
